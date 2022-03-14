@@ -1,0 +1,19 @@
+
+@import '@carbon/themes/scss/themes';
+// Use the gray 90 theme
+$carbon--theme: $carbon--theme--g90;
+// override le theme par default
+$carbon--theme: map-merge($carbon--theme--g90, (
+    'interactive-01': #076605,
+    'hover-primary' : #09c106,
+    'active-primary': #076605,
+    'skeleton-01'   : #1e401c,
+    'skeleton-02'   : #166a1f,
+    'selected-ui'   : #085a02,
+    'inverse-focus-ui' : #076605,
+    'inverse-support-04' : #085a02,
+    'highlight' : #085a02,
+));
+@include carbon--theme();
+@import '~carbon-components/scss/globals/scss/styles.scss';
+
