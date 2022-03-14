@@ -1,19 +1,41 @@
-import React from 'react';
 import './_Presentation.scss'
-import { ProgressIndicatorSkeleton } from 'carbon-components-react';
+import React, { useState, UseEffect, useEffect } from 'react';
+import Splash from '../Splash/Splash';
+import Typewriter from 'typewriter-effect';
 
 
 
-class Presentation extends React.Component {
-    render() {
+export default function TestLoader(){
+    const [isLoading, setLoading] = useState(true);
+    function fakeRequest(){
+        return new Promise(resolve => setTimeout(() => resolve(), 2500));
+    }
+
+    useEffect(()=> {
+        fakeRequest().then(() => {
+            const el = document.querySelector(".loader");
+            if (el) {
+              el.remove();
+              setLoading(!isLoading);
+            }
+          });
+        }, []);
+      
+        if (isLoading) {
+          return <Splash/>;
+        }
+      
         return (
-            < div className='presentation'>
-                salutsssssssssssssssssssssssssssssssssss
-                <img src="https://www.icone-png.com/png/25/25464.png"></img>
-                <ProgressIndicatorSkeleton />
-            </div >
+          <div className="presentation">
+            <h1>
+          <Typewriter
+  options={{
+    strings: ['Hello World', 'Hello Leaks'],
+    autoStart: true,
+    loop: true,
+  }}
+/></h1>
+       
+          </div>
         );
     }
-}
-export default Presentation;
-
