@@ -11,7 +11,7 @@ import Presentation from './components/Presentation/Presentation';
 
 render((
   <BrowserRouter>
-    <SideBar />
-    <Presentation />
+    <SideBar  />
+    <Presentation username={"test"}/>
   </BrowserRouter>
 ), document.getElementById('root'));
