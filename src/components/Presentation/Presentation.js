@@ -44,7 +44,6 @@ const username ="valeur de test";
             </h1>
             <Button>Just let me start</Button>
                   <p>salut {username}</p>
-            <p>Le site a pour but de découvrir react ainsi que son gestionnaire d'état Redux</p>
           </div>
         );
     }
