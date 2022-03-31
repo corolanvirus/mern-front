@@ -1,6 +1,8 @@
 import { SideNav, SideNavMenu, SideNavItems, SideNavMenuItem, Header, HeaderMenuButton, HeaderName, HeaderNavigation, HeaderMenu, HeaderMenuItem } from 'carbon-components-react';
 import React from 'react';
 import './_Navigation.scss'
+import { Route, Switch, NavLink} from 'react-router-dom';
+import List from '../List/List';
 
 const Fade16 = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filetype-json" viewBox="0 0 16 16">
@@ -14,20 +16,21 @@ const Tools17 = () => (
     </svg>);
 
 export default function SideBar() {
+
         return (
             <>
                 <Header aria-label="">
                     <HeaderMenuButton />
 
-                    <HeaderName href="#" prefix="Leak - React Basics">
+                    <HeaderName href="/" prefix="Leak - React Basics">
                     </HeaderName>
 
                     <HeaderNavigation aria-label="">
                         <HeaderMenuItem href="#">HowToUse</HeaderMenuItem>
 
                         <HeaderMenu aria-label="Link 2" menuLinkName="Features">
-                            <HeaderMenuItem href="#">Why i did this</HeaderMenuItem>
-                            <HeaderMenuItem href="#">How i did this</HeaderMenuItem>
+                            <HeaderMenuItem>Why i did this</HeaderMenuItem>
+                            <HeaderMenuItem href="/list">How i did this</HeaderMenuItem>
                             <HeaderMenuItem href="#">Some Tricks</HeaderMenuItem>
                         </HeaderMenu>
                     </HeaderNavigation>
